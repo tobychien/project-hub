@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>慢慢來・台北一人角落</title>
+<meta name="description" content="整理台北適合一個人安靜待著的地方：圖書館、展覽、公園、咖啡廳。不用解釋，也不會被注意。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#top">慢慢來</a>
+  <nav>
+    <a href="#places">地點</a>
+    <a href="#about">關於</a>
+    <button id="openSaved" class="saved-btn" type="button">我的清單 <span id="savedCount">0</span></button>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <p class="eyebrow">台北・一個人也很好</p>
+    <h1>不用解釋，<br>也不會被注意的地方。</h1>
+    <p class="lead">有時候只是想找個地方安靜待著，又不想被看、不想說話。
+      這裡整理了台北適合一個人的角落，先收藏起來，需要的時候再打開。</p>
+    <a class="cta" href="#places">慢慢看看</a>
+  </section>
+
+  <section class="finder" id="places" aria-labelledby="findTitle">
+    <h2 id="findTitle">今天的你，比較像哪一種？</h2>
+    <div class="chips" id="moods" role="group" aria-label="今天的心情"></div>
+
+    <details class="more">
+      <summary>想自己挑條件</summary>
+      <div class="filter-row">
+        <span class="filter-label">地方類型</span>
+        <div class="chips" id="typeFilters" role="group" aria-label="地方類型"></div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">我希望</span>
+        <div class="chips" id="tagFilters" role="group" aria-label="感受條件"></div>
+      </div>
+    </details>
+
+    <div class="result-bar">
+      <p id="resultInfo" aria-live="polite"></p>
+      <button id="randomBtn" class="ghost" type="button">不知道去哪，幫我選一個</button>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>為什麼做這個網站</h2>
+    <p>有些人其實不是不能獨處，而是在意別人的眼光：怕一個人看起來奇怪、怕被問、怕不知道進門後該做什麼。</p>
+    <p>所以這裡不排名、不打星星。每個地方只寫三件事：<strong>為什麼一個人在這裡很自然</strong>、<strong>第一步怎麼走進去</strong>、<strong>可以做些什麼</strong>。</p>
+    <div class="share">
+      <h3>你也有喜歡的角落嗎？</h3>
+      <p>可以匿名分享，我們會看過再加進來。</p>
+      <a id="shareLink" class="cta ghost-cta" href="#" target="_blank" rel="noopener">分享一個地方</a>
+      <p class="hint" id="shareHint" hidden>投稿表單還在準備中，敬請期待。</p>
+    </div>
+    <p class="disclaimer">目前地點資訊為整理與示意內容，尚未全部實地確認。營業時間、票價與入場規定可能改變，出發前請以官方資訊為準。</p>
+  </section>
+</main>
+
+<footer>
+  <p>慢慢來・大學專題作品</p>
+</footer>
+
+<!-- 地點詳情 -->
+<dialog id="detail" aria-labelledby="detailTitle"></dialog>
+
+<!-- 我的清單 -->
+<dialog id="savedDialog" aria-labelledby="savedTitle">
+  <div class="dlg">
+    <button class="close" data-close aria-label="關閉">×</button>
+    <h2 id="savedTitle">我的清單</h2>
+    <div id="savedList"></div>
+  </div>
+</dialog>
+
+<script src="places.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
